@@ -18,7 +18,7 @@ public class GateDrag : MonoBehaviour
         if(holding)
         {
             Vector3 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if ((point.x >=0 && point.x < board.columns) && (point.y >= 0 && point.y < board.rows))
+            if ((point.x >=-0.5 && point.x <= board.columns+0.45-1) && (point.y >= -0.5 && point.y <= board.rows+0.45-1))
             {
                 point.x = Mathf.RoundToInt(point.x);
                 point.y = Mathf.RoundToInt(point.y);

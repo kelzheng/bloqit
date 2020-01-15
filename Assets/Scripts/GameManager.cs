@@ -7,9 +7,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
 
     private BoardManager boardScript;
+    public List<GameObject> gates;
     void Awake()
     {
         boardScript = GetComponent<BoardManager>();
+        gates = new List<GameObject>();
         InitGame();
     }
     void InitGame()

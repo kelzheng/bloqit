@@ -7,11 +7,17 @@ public class GateSelector : MonoBehaviour
 
     [SerializeField]
     GameObject gate;
+    GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.Find("GameManager").GetComponent("GameManager") as GameManager;
+    }
+
+    void Awake()
+    {
+
     }
 
     // Update is called once per frame
