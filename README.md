@@ -1,5 +1,3 @@
-# bloqit
-
 ![picture](https://drive.google.com/uc?id=1xhJ5Zo3ZGchoN-3uR7Xqb0QLp7Hl9Eer)
 
 Thanks for playing bloqit!
