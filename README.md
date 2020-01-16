@@ -4,8 +4,8 @@ Thanks for playing bloqit!
 
 This tiny qubit duel takes:
 
-1. **2 players**: a *Sender* and a *Blocker*
-2. **1 computer** to pass between you
+* **2 players**: a *Sender* and a *Blocker*
+* **1 computer** to pass between you
 
 Bloqit is run on a **quantum circuit**. To create our quantum circuit with three qubits (q0, q1, and q2), we're running ```circ = QuantumCircuit(3)``` and then adding gates to put the quibits in a superposition.
 
