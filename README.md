@@ -1,8 +1,8 @@
-![picture](https://drive.google.com/uc?id=1xhJ5Zo3ZGchoN-3uR7Xqb0QLp7Hl9Eer)
+![picture](https://drive.google.com/uc?id=1CmGvIAMUEN4d0KFqcOwp2aoG_xU9h1KR)
 
 Thanks for playing bloqit!
 
-This game takes:
+This tiny qubit duel takes:
 
 1. **2 players**: a *Sender* and a *Blocker*
 2. **1 computer** to pass between you
@@ -44,6 +44,4 @@ To measure, we generate a bitstring that results after making independent measur
 - The outcome of the qubits are **mapped to classical bits** ```c_0, c_1, c_2``` when we run ```meas.measure(range(3), range(3))```. 
 - To visualize everything, we create ```qc```
 
-This helps us determine the winner of your tiny qubit duel!
-
-Play around with our code with colab [here](https://colab.research.google.com/drive/1nXmAMXcMyuAs2Zd9yBN-gX_5mrVIZuzS#scrollTo=_kQyhVuvO33P)
+Play around with our code with colab [here!](https://colab.research.google.com/drive/1nXmAMXcMyuAs2Zd9yBN-gX_5mrVIZuzS#scrollTo=_kQyhVuvO33P)
