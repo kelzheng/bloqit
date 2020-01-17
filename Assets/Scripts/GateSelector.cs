@@ -28,7 +28,10 @@ public class GateSelector : MonoBehaviour
 
     void OnMouseDown()
     {
-        Instantiate(gate, transform.position, Quaternion.identity);
+        GameObject instance = Instantiate(gate, transform.position, Quaternion.identity);
+
+        gameManager.gates.Add(instance);
+
     }
 
 }
