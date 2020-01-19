@@ -9,6 +9,7 @@ public class GateManager : MonoBehaviour
     public string gateType;
     public int numQubits;
     int[] targetQbits;
+    int moment;
     //ex. toffoli gate is [control, control, target]
     
     void Start()
@@ -19,6 +20,12 @@ public class GateManager : MonoBehaviour
     void SetQbits(int[] qubits)
     {
         targetQbits = qubits;
+    }
+
+    public void setPositions(int moment, int[] tqbits)
+    {
+        this.moment = moment;
+        this.targetQbits = tqbits;
     }
 
 

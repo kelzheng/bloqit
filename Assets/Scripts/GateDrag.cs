@@ -75,6 +75,7 @@ public class GateDrag : MonoBehaviour
         {
             holding = false;
             gameManager.gateEntered = true;
+            gameObject.GetComponent<GateManager>().setPositions()
         }
 
         if (holding&&!inCircuit)
