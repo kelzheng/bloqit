@@ -52,9 +52,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("0");
         Debug.Log("Player 1's turn");
         Debug.Log("Player 1, please choose a place to place your gate");
-
-
     }
+
 
     void Start()
     {
@@ -83,6 +82,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("1");
                 Debug.Log("Player " + activePlayer + "'s turn");
                 Debug.Log("Player " +activePlayer +", please choose a place to place your gate");
+                gameObject.GetComponent<MathManager>().CompileForMath();
 
             }
             else if (turn == turnsPerRound)

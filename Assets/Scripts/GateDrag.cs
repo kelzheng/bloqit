@@ -11,6 +11,8 @@ public class GateDrag : MonoBehaviour
     bool inCircuit = false;
     BoardManager board;
     GameManager gameManager;
+    Vector3 point;
+
     //   Collider2D[] results;
     //   GameManager gameManager;
     // Start is called before the first frame update
@@ -36,7 +38,7 @@ public class GateDrag : MonoBehaviour
         if (holding)
         {
 
-            Vector3 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if ((point.x >=-0.5 && point.x <= board.columns+0.45-1) && (point.y >= -0.5 && point.y <= board.rows+0.45-1))
             {
                 inCircuit = true;
@@ -52,14 +54,51 @@ public class GateDrag : MonoBehaviour
                 foreach(GameObject gate in gameManager.gates)
                 {
                     if(gate != gameObject)
-                        if (point.x == gate.transform.position[0] && point.y == gate.transform.position[1])
+                    {
+                        //if the gate to drop is 2 qbit
+                        if (gameObject.GetComponent<GateManager>().numQubits > 1)
+                        {
+                            //this gate hits another gate
+                            if (point.x == gate.GetComponent<GateManager>().moment && 
+                                (point.y + (float)0.5 * (gameObject.GetComponent<GateManager>().numQubits - 1)) == gate.GetComponent<GateManager>().qbit)
+                            {
+                                canDrop = false;
+                            }
+                            //this gate hits a target
+                            if (point.x == gate.GetComponent<GateManager>().moment &&
+                                (point.y + (float)0.5 * (gameObject.GetComponent<GateManager>().numQubits - 1)) == gate.GetComponent<GateManager>().target)
+                            {
+                                canDrop = false;
+                            }
+                            //this target hits a gate
+                            if (point.x == gate.GetComponent<GateManager>().moment &&
+                                (point.y - 1 + (float)0.5 * (gameObject.GetComponent<GateManager>().numQubits - 1)) == gate.GetComponent<GateManager>().qbit)
+                            {
+                                canDrop = false;
+                            }
+                            //this target hits a gate
+                            if (point.x == gate.GetComponent<GateManager>().moment &&
+                                (point.y - 1 + (float)0.5 * (gameObject.GetComponent<GateManager>().numQubits - 1)) == gate.GetComponent<GateManager>().target)
+                            {
+                                canDrop = false;
+                            }
+                        }
+
+                        //if the gate to drop hits another gate
+                        if (point.x == gate.GetComponent<GateManager>().moment && point.y == gate.GetComponent<GateManager>().qbit)
                         {
                             canDrop = false;
                         }
+                        //checks for 2 qbit spots
+                        if (gate.GetComponent<GateManager>().numQubits>1)
+                        {
+                            if (point.x == gate.GetComponent<GateManager>().moment && point.y == gate.GetComponent<GateManager>().target)
+                            {
+                                canDrop = false;
+                            }
+                        }
+                    }
                 }
-
-                                
-                
             }
             point.z = 0;
 
@@ -70,12 +109,20 @@ public class GateDrag : MonoBehaviour
 
     void OnMouseDown()
     {
-  
         if (canDrop&&inCircuit)
         {
+            float tqubit = point.y;
+            if (gameObject.GetComponent<GateManager>().numQubits > 1)
+            {
+                tqubit += (float)0.5 * (gameObject.GetComponent<GateManager>().numQubits - 1);
+            }
             holding = false;
             gameManager.gateEntered = true;
-            gameObject.GetComponent<GateManager>().setPositions()
+            gameObject.GetComponent<GateManager>().SetPositions((int)point.x , (int)tqubit);
+            if (gameObject.GetComponent<GateManager>().numQubits==2)
+            {
+                gameObject.GetComponent<GateManager>().target = (int)tqubit - 1;
+            }
         }
 
         if (holding&&!inCircuit)
@@ -83,7 +130,5 @@ public class GateDrag : MonoBehaviour
             gameManager.gates.Remove(gameObject);
             Destroy(gameObject);
         }
-        
     }
-
 }
