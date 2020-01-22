@@ -7,11 +7,12 @@ public class BoardManagerV2 : MonoBehaviour
     SettingsManager settingsManager;
     // Start is called before the first frame update
     public int columns = 8;
+    public int rows = 2;
+
     public GameObject line;
     public GameObject[] qubitStart;
     private Transform boardHolder;
     private List<Vector3> gridPositions = new List<Vector3>();
-    private int rows = 2;
 
     void Start()
     {

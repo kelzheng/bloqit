@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    private BoardManager boardScript;
+    private BoardManagerV2 boardScript;
     public List<GameObject> gates;
 
     int turn;
@@ -24,13 +24,12 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        boardScript = GetComponent<BoardManager>();
+        boardScript = GameObject.Find("BoardManager").GetComponent<BoardManagerV2>();
         gates = new List<GameObject>();
         InitGame();
     }
     void InitGame()
     {
-        boardScript.SetupScene();
         StartGame();
 
     }

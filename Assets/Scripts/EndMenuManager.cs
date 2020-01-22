@@ -17,9 +17,9 @@ public class EndMenuManager : MonoBehaviour
     void Start()
     {
         positions = new List<Vector3>();
-        positions.Add(new Vector3(0, 0));
-        positions.Add(new Vector3(0, -75));
-        positions.Add(new Vector3(0, -150));
+        positions.Add(new Vector3(0, -50));
+        positions.Add(new Vector3(0, -300));
+        positions.Add(new Vector3(0, -550));
 
 
         settings = GameObject.Find("SettingsManager").GetComponent<SettingsManager>();

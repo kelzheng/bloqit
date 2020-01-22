@@ -9,7 +9,7 @@ public class GateDrag : MonoBehaviour
     bool holding = true;
     bool canDrop = true;
     bool inCircuit = false;
-    BoardManager board;
+    BoardManagerV2 board;
     GameManager gameManager;
     Vector3 point;
 
@@ -18,7 +18,7 @@ public class GateDrag : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        board = GameObject.Find("GameManager").GetComponent<BoardManager>();
+        board = GameObject.Find("BoardManager").GetComponent<BoardManagerV2>();
         //results = new Collider2D[board.columns * board.rows];
         gameManager = GameObject.Find("GameManager").GetComponent("GameManager") as GameManager;
 
