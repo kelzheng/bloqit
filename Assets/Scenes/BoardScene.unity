@@ -294,6 +294,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate Selector
       objectReference: {fileID: 0}
+    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
+        type: 3}
+      propertyPath: gate
+      value: 
+      objectReference: {fileID: 2911158604839002210, guid: 4e3b2a73bdcd0d741973354425d5d6c4,
+        type: 3}
     - target: {fileID: 2881501117661166965, guid: eb797a97949937b4db17a9b9f4901f14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -349,12 +355,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
-        type: 3}
-      propertyPath: gate
-      value: 
-      objectReference: {fileID: 2911158604839002210, guid: 4e3b2a73bdcd0d741973354425d5d6c4,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb797a97949937b4db17a9b9f4901f14, type: 3}
 --- !u!4 &156278382 stripped
@@ -456,6 +456,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate Selector
       objectReference: {fileID: 0}
+    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
+        type: 3}
+      propertyPath: gate
+      value: 
+      objectReference: {fileID: 6087271149397042425, guid: 3f2d2c9346112854c97fc0e529cd44e1,
+        type: 3}
     - target: {fileID: 2881501117661166965, guid: eb797a97949937b4db17a9b9f4901f14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -511,12 +517,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
-        type: 3}
-      propertyPath: gate
-      value: 
-      objectReference: {fileID: 6087271149397042425, guid: 3f2d2c9346112854c97fc0e529cd44e1,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb797a97949937b4db17a9b9f4901f14, type: 3}
 --- !u!4 &160344654 stripped
@@ -537,6 +537,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate Selector
       objectReference: {fileID: 0}
+    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
+        type: 3}
+      propertyPath: gate
+      value: 
+      objectReference: {fileID: 4286546762739690222, guid: a09ac3a986c774648b6866c2775fb8ad,
+        type: 3}
     - target: {fileID: 2881501117661166965, guid: eb797a97949937b4db17a9b9f4901f14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -592,12 +598,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
-        type: 3}
-      propertyPath: gate
-      value: 
-      objectReference: {fileID: 4286546762739690222, guid: a09ac3a986c774648b6866c2775fb8ad,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb797a97949937b4db17a9b9f4901f14, type: 3}
 --- !u!1 &247206987
@@ -695,6 +695,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate Selector
       objectReference: {fileID: 0}
+    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
+        type: 3}
+      propertyPath: gate
+      value: 
+      objectReference: {fileID: 8566561404706440773, guid: 7e63a9b559f287a4683af5c1d26fb0fc,
+        type: 3}
     - target: {fileID: 2881501117661166965, guid: eb797a97949937b4db17a9b9f4901f14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -750,12 +756,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
-        type: 3}
-      propertyPath: gate
-      value: 
-      objectReference: {fileID: 8566561404706440773, guid: 7e63a9b559f287a4683af5c1d26fb0fc,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb797a97949937b4db17a9b9f4901f14, type: 3}
 --- !u!4 &268032193 stripped
@@ -776,6 +776,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate Selector
       objectReference: {fileID: 0}
+    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
+        type: 3}
+      propertyPath: gate
+      value: 
+      objectReference: {fileID: 5332442246425724250, guid: ce0c84b71d6eb8d4fa3a16759150d371,
+        type: 3}
     - target: {fileID: 2881501117661166965, guid: eb797a97949937b4db17a9b9f4901f14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -831,12 +837,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
-        type: 3}
-      propertyPath: gate
-      value: 
-      objectReference: {fileID: 5332442246425724250, guid: ce0c84b71d6eb8d4fa3a16759150d371,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb797a97949937b4db17a9b9f4901f14, type: 3}
 --- !u!4 &351999913 stripped
@@ -1100,6 +1100,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate Selector
       objectReference: {fileID: 0}
+    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
+        type: 3}
+      propertyPath: gate
+      value: 
+      objectReference: {fileID: 2618158427911631661, guid: 0984077ef2f66d24f99efb228f602501,
+        type: 3}
     - target: {fileID: 2881501117661166965, guid: eb797a97949937b4db17a9b9f4901f14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1155,12 +1161,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
-        type: 3}
-      propertyPath: gate
-      value: 
-      objectReference: {fileID: 2618158427911631661, guid: 0984077ef2f66d24f99efb228f602501,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb797a97949937b4db17a9b9f4901f14, type: 3}
 --- !u!4 &658219511 stripped
@@ -1262,6 +1262,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate Selector
       objectReference: {fileID: 0}
+    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
+        type: 3}
+      propertyPath: gate
+      value: 
+      objectReference: {fileID: 5561935349396975118, guid: d9c34fcd184d07e44bff72586829d58a,
+        type: 3}
     - target: {fileID: 2881501117661166965, guid: eb797a97949937b4db17a9b9f4901f14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1317,12 +1323,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
-        type: 3}
-      propertyPath: gate
-      value: 
-      objectReference: {fileID: 5561935349396975118, guid: d9c34fcd184d07e44bff72586829d58a,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb797a97949937b4db17a9b9f4901f14, type: 3}
 --- !u!4 &756969126 stripped
@@ -1505,6 +1505,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate Selector
       objectReference: {fileID: 0}
+    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
+        type: 3}
+      propertyPath: gate
+      value: 
+      objectReference: {fileID: 7290896636874932559, guid: 329851d74271eec4faad2bafac5732e1,
+        type: 3}
     - target: {fileID: 2881501117661166965, guid: eb797a97949937b4db17a9b9f4901f14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1560,12 +1566,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
-        type: 3}
-      propertyPath: gate
-      value: 
-      objectReference: {fileID: 7290896636874932559, guid: 329851d74271eec4faad2bafac5732e1,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb797a97949937b4db17a9b9f4901f14, type: 3}
 --- !u!4 &977100811 stripped
@@ -1748,6 +1748,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate Selector
       objectReference: {fileID: 0}
+    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
+        type: 3}
+      propertyPath: gate
+      value: 
+      objectReference: {fileID: 6016048942295817759, guid: 6ccb20bcf5c0f3a4aa3df2dd225fd61b,
+        type: 3}
     - target: {fileID: 2881501117661166965, guid: eb797a97949937b4db17a9b9f4901f14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1803,12 +1809,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
-        type: 3}
-      propertyPath: gate
-      value: 
-      objectReference: {fileID: 6016048942295817759, guid: 6ccb20bcf5c0f3a4aa3df2dd225fd61b,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb797a97949937b4db17a9b9f4901f14, type: 3}
 --- !u!4 &1078740572 stripped
@@ -1829,6 +1829,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate Selector
       objectReference: {fileID: 0}
+    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
+        type: 3}
+      propertyPath: gate
+      value: 
+      objectReference: {fileID: 2860037320343705650, guid: 370a27e9cf8194e48973305b460efe17,
+        type: 3}
     - target: {fileID: 2881501117661166965, guid: eb797a97949937b4db17a9b9f4901f14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1884,12 +1890,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
-        type: 3}
-      propertyPath: gate
-      value: 
-      objectReference: {fileID: 2860037320343705650, guid: 370a27e9cf8194e48973305b460efe17,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb797a97949937b4db17a9b9f4901f14, type: 3}
 --- !u!4 &1087896099 stripped
@@ -1910,6 +1910,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate Selector
       objectReference: {fileID: 0}
+    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
+        type: 3}
+      propertyPath: gate
+      value: 
+      objectReference: {fileID: 3399410143539406058, guid: 61670332c6576b346aaf677580391858,
+        type: 3}
     - target: {fileID: 2881501117661166965, guid: eb797a97949937b4db17a9b9f4901f14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1965,12 +1971,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
-        type: 3}
-      propertyPath: gate
-      value: 
-      objectReference: {fileID: 3399410143539406058, guid: 61670332c6576b346aaf677580391858,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb797a97949937b4db17a9b9f4901f14, type: 3}
 --- !u!4 &1128181785 stripped
@@ -2014,6 +2014,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6f72a99af001a34ebf40fd05bf8e52f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1157732550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157732546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ef057413398451dad6b2af588883cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1160142907 stripped
@@ -2084,6 +2096,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate Selector
       objectReference: {fileID: 0}
+    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
+        type: 3}
+      propertyPath: gate
+      value: 
+      objectReference: {fileID: 1788349983065838373, guid: 609693a1d68467a4f8495adc7f21ab78,
+        type: 3}
     - target: {fileID: 2881501117661166965, guid: eb797a97949937b4db17a9b9f4901f14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2139,12 +2157,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
-        type: 3}
-      propertyPath: gate
-      value: 
-      objectReference: {fileID: 1788349983065838373, guid: 609693a1d68467a4f8495adc7f21ab78,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb797a97949937b4db17a9b9f4901f14, type: 3}
 --- !u!4 &1553798842 stripped
@@ -2327,6 +2339,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate Selector
       objectReference: {fileID: 0}
+    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
+        type: 3}
+      propertyPath: gate
+      value: 
+      objectReference: {fileID: 2139154287888018738, guid: af380cb6d276d9649976b26bc53b8c2e,
+        type: 3}
     - target: {fileID: 2881501117661166965, guid: eb797a97949937b4db17a9b9f4901f14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2382,12 +2400,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
-        type: 3}
-      propertyPath: gate
-      value: 
-      objectReference: {fileID: 2139154287888018738, guid: af380cb6d276d9649976b26bc53b8c2e,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb797a97949937b4db17a9b9f4901f14, type: 3}
 --- !u!4 &1859394421 stripped
@@ -2489,6 +2501,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate Selector
       objectReference: {fileID: 0}
+    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
+        type: 3}
+      propertyPath: gate
+      value: 
+      objectReference: {fileID: 6893471478558450969, guid: 445df339676a4b243ab6bc086d06d6bb,
+        type: 3}
     - target: {fileID: 2881501117661166965, guid: eb797a97949937b4db17a9b9f4901f14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2544,12 +2562,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2881501117661166964, guid: eb797a97949937b4db17a9b9f4901f14,
-        type: 3}
-      propertyPath: gate
-      value: 
-      objectReference: {fileID: 6893471478558450969, guid: 445df339676a4b243ab6bc086d06d6bb,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb797a97949937b4db17a9b9f4901f14, type: 3}
 --- !u!1001 &8798993190861612701
