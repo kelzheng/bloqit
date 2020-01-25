@@ -1,6 +1,6 @@
 # bloqit
 
-![picture](https://drive.google.com/uc?id=1Oy2lRgNkFbVVEa0zmtN5K8KyrXDSIvZA)
+![picture](https://drive.google.com/uc?id=1TWP00uXj_BqutaxfvJp9i0JG2SpmKDXd) | ![picture](https://drive.google.com/uc?id=1f4Co3JKmJqkyjSl2iBM4pQmJmsYP_ahu)
 
 Thanks for playing bloqit!
 
@@ -23,8 +23,6 @@ To send or block, each player has a certain number of **gates** they play. These
 - **X gate** : does a 180 degree rotation in the x axis
 - **Y gate**: does 180 degree rotation in the y axis
 - **Z gate**: does a 180 degree rotation in the Z axis
-
-![picture](https://drive.google.com/uc?id=1JOtIdgGR6N0DwkSSk1t39XkYu8XcW4GR)
 
 Once you have both used your gates, it's time to **measure**.
 
