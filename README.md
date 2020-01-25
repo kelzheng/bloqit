@@ -1,6 +1,6 @@
 # bloqit
 
-![picture](https://drive.google.com/uc?id=1TWP00uXj_BqutaxfvJp9i0JG2SpmKDXd) | ![picture](https://drive.google.com/uc?id=1f4Co3JKmJqkyjSl2iBM4pQmJmsYP_ahu)
+![picture](https://drive.google.com/uc?id=15fUdwL64bpk8xDtfaNGqSiUa1qjQCp4B) | ![picture](https://drive.google.com/uc?id=1f4Co3JKmJqkyjSl2iBM4pQmJmsYP_ahu)
 
 Thanks for playing bloqit!
 
