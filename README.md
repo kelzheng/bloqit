@@ -1,4 +1,4 @@
-# bloqit
+# bloqit: a tiny qubit duel
 
 ![picture](https://drive.google.com/uc?id=1WYNP2RYWzDwOlpPrYrpKpXPQANO23Jvn)  ![picture](https://drive.google.com/uc?id=1jhlzb5tngMBReBnhGsabtk_Wg1bCAbgj)
 
