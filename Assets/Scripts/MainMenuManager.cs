@@ -9,6 +9,8 @@ public class MainMenuManager : MonoBehaviour
     private Button oneQubit;
     [SerializeField]
     private Button twoQubit;
+    [SerializeField]
+    private Button exitButton;
 
     [SerializeField]
     private GameObject settings;
@@ -20,6 +22,7 @@ public class MainMenuManager : MonoBehaviour
     {
         oneQubit.onClick.AddListener(OneQubitOnClick);
         twoQubit.onClick.AddListener(TwoQubitOnClick);
+        exitButton.onClick.AddListener(ExitButtonOnClick);
         settingsScript = settings.GetComponent<SettingsManager>();
         DontDestroyOnLoad(settings);
     }
@@ -34,5 +37,9 @@ public class MainMenuManager : MonoBehaviour
     {
         settingsScript.numQubits = 2;
         SceneManager.LoadScene("Instructions");
+    }
+    void ExitButtonOnClick()
+    {
+        Application.Quit();
     }
 }
