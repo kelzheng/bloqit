@@ -27,12 +27,12 @@ public class MainMenuManager : MonoBehaviour
     void OneQubitOnClick()
     {
         settingsScript.numQubits = 1;
-        SceneManager.LoadScene("BoardDev");
+        SceneManager.LoadScene("Instructions");
     }
 
     void TwoQubitOnClick()
     {
         settingsScript.numQubits = 2;
-        SceneManager.LoadScene("BoardDev");
+        SceneManager.LoadScene("Instructions");
     }
 }

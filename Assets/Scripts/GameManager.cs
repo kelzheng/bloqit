@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,17 +21,30 @@ public class GameManager : MonoBehaviour
 
     int player1Score;
     int player2Score;
+    PlayerImage playerImage;
+    TurnsLeftManager turnsLeft;
 
     public bool gateEntered;
 
-    void Awake()
+    bool gameDone = false;
+
+    private GameObject settings;
+
+    private SettingsManager settingsScript;
+
+    void Start()
     {
         boardScript = GameObject.Find("BoardManager").GetComponent<BoardManagerV2>();
         gates = new List<GameObject>();
+        playerImage = GameObject.Find("PlayerImage").GetComponent<PlayerImage>();
+        turnsLeft = GameObject.Find("Turns Left").GetComponent<TurnsLeftManager>();
         InitGame();
     }
     void InitGame()
     {
+        settings = GameObject.Find("SettingsManager");
+        settingsScript = settings.GetComponent<SettingsManager>();
+        DontDestroyOnLoad(settings);
         StartGame();
 
     }
@@ -38,7 +53,7 @@ public class GameManager : MonoBehaviour
     {
         gateEntered = false;
 
-        turnsPerRound = 8;
+        turnsPerRound = 3;
         roundsPerGame = 2;
 
         player1Score = 0;
@@ -48,62 +63,69 @@ public class GameManager : MonoBehaviour
         round = 1;
 
         activePlayer = 1;
-        Debug.Log("0");
-        Debug.Log("Player 1's turn");
-        Debug.Log("Player 1, please choose a place to place your gate");
+        playerImage.ChangePlayer("Sender");
+        turnsLeft.updateTurns(turnsPerRound-turn+1);
     }
 
-
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (gateEntered)
+        if (gateEntered && !gameDone)
         {
-            if (turn < turnsPerRound)
+            if (turn < turnsPerRound+1)
             {
-                turn++;
 
                 if (activePlayer==1)
                 {
                     activePlayer = 2;
+                    playerImage.ChangePlayer("Blocker");
                 }
 
                 else if (activePlayer == 2)
                 {
                     activePlayer = 1;
+                    playerImage.ChangePlayer("Sender");
+                    turn++;
+                    turnsLeft.updateTurns(turnsPerRound - turn+1);
+
                 }
 
-                Debug.Log("1");
-                Debug.Log("Player " + activePlayer + "'s turn");
-                Debug.Log("Player " +activePlayer +", please choose a place to place your gate");
+
                 gameObject.GetComponent<MathManager>().CompileForMath();
 
             }
-            else if (turn == turnsPerRound)
+            if (turn == turnsPerRound+1)
             {
-                turn = 1;
-                round++;
-
-                if (activePlayer == 1)
+                gameDone = true;
+                turnsLeft.GetComponentInChildren<Text>().text="Computing Results!";
+                for (int i=0; i<settingsScript.numQubits; i++)
                 {
-                    activePlayer = 2;
+                    //settingsScript.qbitProbs.Add(qbitprob[i]);
+                    settingsScript.qbitProbs.Add(0.5f);
                 }
+                //do math stuff
 
-                if (activePlayer == 2)
-                {
-                    activePlayer = 1;
-                }
-                Debug.Log("2");
-                Debug.Log("Player " + activePlayer + "'s turn");
-                Debug.Log("Player " + activePlayer + ", please choose a place to place your gate");
+                // add a wait to build suspense
+                StartCoroutine(waitThenEndGame());
+
+                
             }
 
             gateEntered = false;
         }
+    }
+
+    IEnumerator waitThenEndGame()
+    {
+        float timeToWait = 1.5f;
+        float timeWatied = 0f;
+        while (timeWatied < timeToWait)
+        {
+            timeWatied += Time.deltaTime;
+            yield return null;
+        }
+        SceneManager.LoadScene("EndMenu");
+
     }
 }

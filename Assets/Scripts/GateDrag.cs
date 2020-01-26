@@ -82,6 +82,11 @@ public class GateDrag : MonoBehaviour
                             {
                                 canDrop = false;
                             }
+                            //if the target if off the edge
+                            if ((point.y + (float)0.5 * (gameObject.GetComponent<GateManager>().numQubits - 1)) - 1 < 0)
+                            {
+                                canDrop = false;
+                            }
                         }
 
                         //if the gate to drop hits another gate
