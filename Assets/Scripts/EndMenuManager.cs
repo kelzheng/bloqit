@@ -11,6 +11,9 @@ public class EndMenuManager : MonoBehaviour
     private GameObject qubitProbChart;
 
     [SerializeField]
+    private GameObject qubitProbBackground;
+
+    [SerializeField]
     private GameObject qubitsContainer;
 
     [SerializeField]
@@ -39,6 +42,11 @@ public class EndMenuManager : MonoBehaviour
             chart.transform.SetParent(qubitsContainer.transform, false);
             chart.transform.position = qubitsContainer.transform.position + positions[i];
             chart.GetComponent<Image>().fillAmount = qubitProb;
+
+            GameObject chartBackground = GameObject.Instantiate(qubitProbBackground, qubitsContainer.transform.position, Quaternion.identity);
+            chartBackground.transform.SetParent(qubitsContainer.transform, false);
+            chartBackground.transform.position = qubitsContainer.transform.position + positions[i];
+            chartBackground.GetComponent<Image>().fillAmount = (1f - qubitProb);
             i++;
         }
         SceneManager.MoveGameObjectToScene(GameObject.Find("SettingsManager"), SceneManager.GetActiveScene());
