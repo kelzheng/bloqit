@@ -17,9 +17,16 @@ public class GateButtonManager : MonoBehaviour
 
     public void CreateGate(int gate)
     {
+
+#if UNITY_STANDALONE || UNITY_WEBPLAYER
         GameObject instance = Instantiate(gates[gate], transform.position, Quaternion.identity);
 
         gameManager.gates.Add(instance);
+#else
+        GameObject instance = Instantiate(gates[gate], transform.position, Quaternion.identity);
+
+        gameManager.gates.Add(instance);
+#endif
 
     }
 }

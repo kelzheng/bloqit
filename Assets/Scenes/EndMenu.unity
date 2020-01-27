@@ -500,6 +500,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   qubitProbChart: {fileID: 3228592565117882855, guid: 1182210ff23b0c6489ce45ad398bc018,
     type: 3}
+  qubitProbBackground: {fileID: 7146788973920136452, guid: 3100d99b9cf6e084c8a2913b1f936c40,
+    type: 3}
   qubitsContainer: {fileID: 607747279}
   nextButton: {fileID: 76847367}
 --- !u!4 &670202023

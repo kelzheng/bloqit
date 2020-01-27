@@ -27,8 +27,7 @@ public class PlayerImage : MonoBehaviour
 
     public void ChangePlayer(string newPlayer)
     {
-        Debug.Log(newPlayer);
-        Debug.Log(playerText.text);
+
         playerText.text = newPlayer;
         if (newPlayer == "Sender")
         {
