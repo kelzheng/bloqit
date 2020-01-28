@@ -466,7 +466,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -301}
+  m_AnchoredPosition: {x: -200, y: -301}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &670202021
@@ -499,6 +499,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   qubitProbChart: {fileID: 3228592565117882855, guid: 1182210ff23b0c6489ce45ad398bc018,
+    type: 3}
+  arrow: {fileID: 3154354323555286873, guid: 9b7d131caa3ad684889f8d0a97c21d66, type: 3}
+  qubitResultText: {fileID: 48316342204877743, guid: 1cccabfccea5cec488b9ef81361307e1,
     type: 3}
   qubitProbBackground: {fileID: 7146788973920136452, guid: 3100d99b9cf6e084c8a2913b1f936c40,
     type: 3}
@@ -833,7 +836,7 @@ GameObject:
   - component: {fileID: 1851515885}
   - component: {fileID: 1851515884}
   m_Layer: 5
-  m_Name: Text
+  m_Name: WinnerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

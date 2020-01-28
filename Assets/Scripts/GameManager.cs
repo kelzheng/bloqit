@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     public int turnsPerRound;
     public int roundsPerGame;
 
+    [SerializeField]
+    GameObject[] twoQbitGateButtons;
+
     int activePlayer;
 
     int player1Score;
@@ -50,6 +53,14 @@ public class GameManager : MonoBehaviour
         settings = GameObject.Find("SettingsManager");
         settingsScript = settings.GetComponent<SettingsManager>();
         DontDestroyOnLoad(settings);
+        if (settingsScript.numQubits == 1)
+        {
+            foreach (GameObject button in twoQbitGateButtons)
+            {
+                Destroy(button);
+            }
+        }
+
         StartGame();
 
     }

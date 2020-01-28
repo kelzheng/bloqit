@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -5579470553918970609}
   - component: {fileID: 4259308271297384691}
   m_Layer: 0
-  m_Name: meas
+  m_Name: i
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,5 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3821a47b0b49c445a321f72ad49a1b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gateType: meas
+  gateType: i
   numQubits: 1
+  qbit: 0
+  target: 0
+  moment: 0
