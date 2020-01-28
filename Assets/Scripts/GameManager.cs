@@ -26,7 +26,11 @@ public class GameManager : MonoBehaviour
 
     public bool gateEntered;
 
+    BrokenPasta mathManager;
+
     bool gameDone = false;
+
+    float[] probs;
 
     private GameObject settings;
 
@@ -38,6 +42,7 @@ public class GameManager : MonoBehaviour
         gates = new List<GameObject>();
         playerImage = GameObject.Find("PlayerImage").GetComponent<PlayerImage>();
         turnsLeft = GameObject.Find("Turns Left").GetComponent<TurnsLeftManager>();
+        mathManager = gameObject.GetComponent<BrokenPasta>();
         InitGame();
     }
     void InitGame()
@@ -91,20 +96,24 @@ public class GameManager : MonoBehaviour
 
                 }
 
+                string[,] gateString = mathManager.CompileForMath();
+                probs = mathManager.getProbs(gateString);
+                
 
-                gameObject.GetComponent<MathManager>().CompileForMath();
 
             }
             if (turn == turnsPerRound+1)
             {
                 gameDone = true;
                 turnsLeft.GetComponentInChildren<Text>().text="Computing Results!";
+                //do math stuff
+
                 for (int i=0; i<settingsScript.numQubits; i++)
                 {
-                    //settingsScript.qbitProbs.Add(qbitprob[i]);
-                    settingsScript.qbitProbs.Add(0.5f);
+                    settingsScript.qbitProbs.Add(probs[i]);
+                    //settingsScript.qbitProbs.Add(0.5f);
                 }
-                //do math stuff
+                
 
                 // add a wait to build suspense
                 StartCoroutine(waitThenEndGame());

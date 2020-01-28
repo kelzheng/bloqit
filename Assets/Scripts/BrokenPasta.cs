@@ -5,12 +5,58 @@ using System.Collections.Generic; // for List
 
 public class BrokenPasta : MonoBehaviour
 {
+    GameManager gameManager;
+    BoardManagerV2 board;
+
     void Start() // Method to test Debug.Log()s in unity //
     {
-        string[,] TestCircuit = { { "x", "cnot", "s", "h", "i", "i" }, { "i", "cnott", "t", "i", "i", "z" } }; // a test circuit
-        var EvaluatedMoments = EvaluateMoment(TestCircuit); // evaluate the moments in the circuit, return one equivalent moments multiplied together
-        var FinalState = CalcState(EvaluatedMoments); // multiply the state by the moments
-        Debug.Log(FinalState); // return the final state
+        board = GameObject.Find("BoardManager").GetComponent<BoardManagerV2>();
+        gameManager = GameObject.Find("GameManager").GetComponent("GameManager") as GameManager;
+
+        //string[,] TestCircuit = { { "h", "t", "h", "i", "i", "i" }, { "i", "i", "i", "i", "i", "i" } }; // a test circuit
+        //var EvaluatedMoments = EvaluateMoment(TestCircuit); // evaluate the moments in the circuit, return one equivalent moments multiplied together
+        //var FinalState = CalcState(EvaluatedMoments); // multiply the state by the moments
+        //qbitProbs(EvaluatedMoments);
+        //Debug.Log(FinalState); // return the final state
+    }
+
+    public string[,] CompileForMath()
+    {
+        string[,] gateArray = new string[board.rows, board.columns];
+        for (int i = 0; i < board.rows; i++)
+        {
+            for (int j = 0; j < board.columns; j++)
+            {
+                gateArray[i, j]="i";
+            }   
+        }
+
+
+        //Debug.Log(gateArray.Length);
+
+        foreach (GameObject gate in gameManager.gates)
+        {
+
+            //Debug.Log("[" + gate.GetComponent<GateManager>().qbit + "," + gate.GetComponent<GateManager>().moment + "]" + gate.GetComponent<GateManager>().gateType
+            if (gate.GetComponent<GateManager>().numQubits == 2)
+            {
+                gateArray[gate.GetComponent<GateManager>().target, gate.GetComponent<GateManager>().moment] = gate.GetComponent<GateManager>().gateType + "t";
+            }
+            gateArray[gate.GetComponent<GateManager>().qbit, gate.GetComponent<GateManager>().moment] = gate.GetComponent<GateManager>().gateType;
+
+
+        }
+/*        string displayString = "";
+        for (int i = 0; i < board.rows; i++)
+        {
+            for (int j = 0; j < board.columns; j++)
+            {
+                displayString += gateArray[i, j];
+            }
+            displayString += '\n';
+        }
+        Debug.Log(displayString);*/
+        return gateArray;
     }
 
     public DenseMatrix MatchGate(string gate) // Method to take string gate name -> 2x2 or 4x4 DenseMatrix of equivalent gate //
@@ -73,11 +119,12 @@ public class BrokenPasta : MonoBehaviour
              {new Complex32(0,0),new Complex32(0,0),new Complex32(0,0),new Complex32(-1,0)}});
         //Debug.Log((X)); Debug.Log((Y)); Debug.Log((Z)); Debug.Log((S)); Debug.Log((T)); Debug.Log((H));
 
-
         // 3. Match the gate
-        int numQubits = 2;
-        int rows = numQubits;
-        int columns = gate.Length/numQubits;
+
+
+        //int numQubits = 2;
+        //int rows = numQubits;
+        //int columns = gate.Length/numQubits;
 
         if (gate == "x")
         {
@@ -134,15 +181,39 @@ public class BrokenPasta : MonoBehaviour
         }
     }
 
+    float[] qbitProbs(DenseMatrix state)
+    {
+        float[] probs= new float[board.rows];
+        //Debug.Log(state);
+        state = (DenseMatrix)state.ConjugateTransposeAndMultiply(state);
+        //Debug.Log(state);
+
+        if (board.rows == 1)
+        {
+            probs[0] = state[1, 1].Real;
+        }
+        if (board.rows == 2)
+        {
+            probs[0] = state[1, 1].Real+ state[3, 3].Real;
+            probs[1] = state[2, 2].Real + state[3, 3].Real;
+        }
+        //Debug.Log("q1: "+probs[0]+" Q2: "+probs[1]);
+        return probs;
+
+
+
+        //Debug.Log(state);
+    }
+
     public DenseMatrix EvaluateMoment(string[,] Circuit) // Method to take numQubitsx(Circuit.Length/numQubits) string array of gate names -> 2x2 or 4x4 DenseMatrix of equivalent gate with MatchGate method -> 4x4 DenseMatrix of all moments multiplied together //
     {
         // Circuit dimensions
-        int numQubits = 2;
+        int numQubits = board.rows;
         int rows = numQubits;
-        int columns = Circuit.Length / numQubits;
+        int columns = board.columns;
 
         // Initialize gates to be tensored
-        var Moments = new List<DenseMatrix>();
+        List<DenseMatrix> Moments = new List<DenseMatrix>();
         string gate;
         DenseMatrix gateOne = DenseMatrix.OfArray(new Complex32[,]
             {{new Complex32(1,0),new Complex32(0,0),new Complex32(0,0),new Complex32(0,0)},
@@ -158,7 +229,7 @@ public class BrokenPasta : MonoBehaviour
             {{new Complex32(1,0),new Complex32(0,0),new Complex32(0,0),new Complex32(0,0)},
              {new Complex32(0,0),new Complex32(1,0),new Complex32(0,0),new Complex32(0,0)},
              {new Complex32(0,0),new Complex32(0,0),new Complex32(1,0),new Complex32(0,0)},
-             {new Complex32(0,0),new Complex32(0,0),new Complex32(0,0),new Complex32(-1,0)}});
+             {new Complex32(0,0),new Complex32(0,0),new Complex32(0,0),new Complex32(1,0)}});
         DenseMatrix FinalTensoredMoments = DenseMatrix.OfArray(new Complex32[,]
             {{new Complex32(1,0),new Complex32(0,0),new Complex32(0,0),new Complex32(0,0)},
              {new Complex32(0,0),new Complex32(1,0),new Complex32(0,0),new Complex32(0,0)},
@@ -182,6 +253,13 @@ public class BrokenPasta : MonoBehaviour
              {new Complex32(0,0),new Complex32(0,0),new Complex32(1,0),new Complex32(0,0)},
              {new Complex32(0,0),new Complex32(0,0),new Complex32(0,0),new Complex32(-1,0)}});
 
+        var ket0 = DenseMatrix.OfArray(new Complex32[,]
+            {{new Complex32(1,0)},
+         {new Complex32(0,0)}});
+        var ket00 = ket0.KroneckerProduct(ket0);
+        var state = ket00;
+
+
         // Match gates in each moment and tensor together
         for (int i = 0; i < columns; i++)
         {
@@ -199,25 +277,36 @@ public class BrokenPasta : MonoBehaviour
                 }
 
             }
-            // Skip condition for SWAP, CNOT, CZ
-            if (gateOne.Equals(SWAP) || gateOne.Equals(CNOT) || gateOne.Equals(CZ) || gateTwo.Equals(SWAP) || gateTwo.Equals(CNOT) || gateTwo.Equals(CZ))
+            if (numQubits == 2)
             {
-                TensoredMoment = gateOne;
-                Moments.Add(TensoredMoment);
+                // Skip condition for SWAP, CNOT, CZ
+                if (gateOne.Equals(SWAP) || gateOne.Equals(CNOT) || gateOne.Equals(CZ) || gateTwo.Equals(SWAP) || gateTwo.Equals(CNOT) || gateTwo.Equals(CZ))
+                {
+                    //Debug.Log("this has run");
+                    TensoredMoment = gateOne;
+                    Moments.Add(TensoredMoment);
+                }
+                else
+                {
+                    TensoredMoment = (DenseMatrix)gateOne.KroneckerProduct(gateTwo);
+                    Moments.Add(TensoredMoment);
+                }
             }
-            else
-            {
-                TensoredMoment = (DenseMatrix)gateOne.KroneckerProduct(gateTwo);
-                Moments.Add(TensoredMoment);
-            }
+                
+            //Debug.Log(gateOne);
+            //Debug.Log(gateTwo);
+            //Debug.Log(TensoredMoment);
+            state = TensoredMoment.Multiply(state);
+            //Debug.Log(state);
         }
 
         // Multiply together all moments for FinalTensoredMoments
-        for (int idx = 0; idx < rows; idx++)
+/*        for (int idx = 0; idx < rows; idx++)
         {
-            FinalTensoredMoments = (DenseMatrix)FinalTensoredMoments.Multiply(Moments[idx]);
-        }
-        return FinalTensoredMoments;
+            FinalTensoredMoments = (DenseMatrix) FinalTensoredMoments.Multiply(Moments[idx]);
+        }*/
+
+        return (DenseMatrix) state;
     }
 
 
@@ -244,9 +333,23 @@ public class BrokenPasta : MonoBehaviour
         var ket10 = ket1.KroneckerProduct(ket0);
 
         // Mutltiply state by FinalTensoredMoments
+        //Debug.Log(FinalTensoredMoments);
         var state = (DenseMatrix)FinalTensoredMoments.Multiply(ket00);
 
         // Return final state
         return state;
     }
+
+
+
+    public float[] getProbs(string [,] circuit)
+    {
+        var state = EvaluateMoment(circuit);
+        float [] probs = qbitProbs(state);
+        //Debug.Log(finalState);
+        return probs;
+    }
+    //var EvaluatedMoments = EvaluateMoment(TestCircuit); // evaluate the moments in the circuit, return one equivalent moments multiplied together
+    //var FinalState = CalcState(EvaluatedMoments); // multiply the state by the moments
+    //Debug.Log(FinalState); // return the final state
 }
