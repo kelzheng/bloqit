@@ -13,6 +13,8 @@ public class GateDrag : MonoBehaviour
     GameManager gameManager;
     Vector3 point;
 
+    AudioManager plop;
+
     //   Collider2D[] results;
     //   GameManager gameManager;
     // Start is called before the first frame update
@@ -21,7 +23,7 @@ public class GateDrag : MonoBehaviour
         board = GameObject.Find("BoardManager").GetComponent<BoardManagerV2>();
         //results = new Collider2D[board.columns * board.rows];
         gameManager = GameObject.Find("GameManager").GetComponent("GameManager") as GameManager;
-
+        plop = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -51,6 +53,15 @@ public class GateDrag : MonoBehaviour
                 {
                     point.y -= (float)0.5*(gameObject.GetComponent<GateManager>().numQubits-1);
                 }
+                
+                //if the target if off the edge
+                if (gameObject.GetComponent<GateManager>().numQubits > 1){
+
+                    if ((point.y + (float)0.5 * (gameObject.GetComponent<GateManager>().numQubits - 1)) - 1 < 0)
+                    {
+                        canDrop = false;
+                    }
+                 }
                 
                 foreach(GameObject gate in gameManager.gates)
                 {
@@ -83,11 +94,7 @@ public class GateDrag : MonoBehaviour
                             {
                                 canDrop = false;
                             }
-                            //if the target if off the edge
-                            if ((point.y + (float)0.5 * (gameObject.GetComponent<GateManager>().numQubits - 1)) - 1 < 0)
-                            {
-                                canDrop = false;
-                            }
+
                         }
 
                         //if the gate to drop hits another gate
@@ -189,6 +196,7 @@ public class GateDrag : MonoBehaviour
                             tqubit += (float)0.5 * (gameObject.GetComponent<GateManager>().numQubits - 1);
                         }
                         holding = false;
+                        plop.playPlop();
                         gameManager.gateEntered = true;
                         gameObject.GetComponent<GateManager>().SetPositions((int)point.x, (int)tqubit);
                         if (gameObject.GetComponent<GateManager>().numQubits == 2)
@@ -197,7 +205,7 @@ public class GateDrag : MonoBehaviour
                         }
                     }
 
-                    if (holding && !inCircuit)
+                    else if (holding && !inCircuit)
                     {
                         gameManager.gates.Remove(gameObject);
                         Destroy(gameObject);
@@ -223,6 +231,7 @@ public class GateDrag : MonoBehaviour
                 tqubit += (float)0.5 * (gameObject.GetComponent<GateManager>().numQubits - 1);
             }
             holding = false;
+            plop.playPlop();
             gameManager.gateEntered = true;
             gameObject.GetComponent<GateManager>().SetPositions((int)point.x , (int)tqubit);
             if (gameObject.GetComponent<GateManager>().numQubits==2)
