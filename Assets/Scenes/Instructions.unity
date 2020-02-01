@@ -254,8 +254,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Drag your gates onto the quantum circut!\n\nThe sender wants all the qbits
-    to be close to 1. \n\nThe blocker wants all the gates to be close to 0. \n\nThe
+  m_Text: "Drag your gates onto the quantum circut!\n\nThe sender wants all the qubits
+    to be close to 1. \n\nThe blocker wants all the qubits to be close to 0. \n\nThe
     sender goes first."
 --- !u!222 &376906365
 CanvasRenderer:
