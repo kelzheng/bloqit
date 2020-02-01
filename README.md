@@ -32,4 +32,6 @@ To measure, we generate a bitstring that results after making independent measur
 - The outcome of the qubits are **mapped to classical bits** ```c_0, c_1, c_2``` when we run ```meas.measure(range(3), range(3))```. 
 - To visualize everything, we create ```qc```.
 
+To download the game, please go to [builds](https://github.com/kelzheng/bloqit/tree/master/builds) and select the platform of your choice.
+
 Good luck on your qubit duels!
