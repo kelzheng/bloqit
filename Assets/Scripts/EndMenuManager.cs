@@ -8,16 +8,16 @@ using UnityEngine.SceneManagement;
 public class EndMenuManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject qubitProbChart;
+    GameObject[] qubitProbChart;
 
     [SerializeField]
-    private GameObject arrow;
+    GameObject[] arrow;
 
     [SerializeField]
-    private GameObject qubitResultText;
+    private GameObject[] qubitResultText;
 
     [SerializeField]
-    private GameObject qubitProbBackground;
+    private GameObject[] qubitProbBackground;
 
     [SerializeField]
     private GameObject qubitsContainer;
@@ -38,7 +38,7 @@ public class EndMenuManager : MonoBehaviour
     {
         qubitResults = new List<int>();
         
-        positions = new List<Vector3>();
+        /*positions = new List<Vector3>();
         positions.Add(new Vector3(0, 500));
         positions.Add(new Vector3(0, 175));
         positions.Add(new Vector3(0, -150));
@@ -51,13 +51,40 @@ public class EndMenuManager : MonoBehaviour
         textPositionns = new List<Vector3>();
         textPositionns.Add(new Vector3(465, 500));
         textPositionns.Add(new Vector3(465, 175));
-        textPositionns.Add(new Vector3(465, -150));
+        textPositionns.Add(new Vector3(465, -150));*/
 
         nextButton.onClick.AddListener(NextButtonOnClick);
 
 
         settings = GameObject.Find("SettingsManager").GetComponent<SettingsManager>();
-        int i = 0;
+        for (int i=0; i<qubitProbChart.Length; i++)
+        {
+            if (i < settings.numQubits)
+            {
+                qubitProbChart[i].GetComponent<Image>().fillAmount = settings.qbitProbs[i];
+                qubitProbBackground[i].GetComponent<Image>().fillAmount = (1f - settings.qbitProbs[i]);
+                if (settings.qbitProbs[i] * 100 >= Random.Range(0, 100))
+                {
+                    qubitResults.Add(1);
+                }
+                else
+                {
+                    qubitResults.Add(0);
+                }
+                qubitResultText[i].GetComponentInChildren<Text>().text = qubitResults[i].ToString();
+
+
+            }
+            else
+            {
+                Destroy(qubitProbChart[i]);
+                Destroy(arrow[i]);
+                Destroy(qubitResultText[i]);
+                Destroy(qubitProbBackground[i]);
+            }
+            
+        }
+/*        int i = 0;
         foreach(float qubitProb in settings.qbitProbs)
         {
             GameObject chart = GameObject.Instantiate(qubitProbChart, qubitsContainer.transform.position, Quaternion.identity);
@@ -94,7 +121,7 @@ public class EndMenuManager : MonoBehaviour
                
 
 
-        }
+        }*/
         int qubitSum = 0;
         foreach (int prob in qubitResults)
         {
